@@ -1,3 +1,5 @@
-export default function Host() {
-    return <h1>Upload</h1>
+export default function Upload() {
+    return (
+        <h1>Upload</h1>
+    )
 }

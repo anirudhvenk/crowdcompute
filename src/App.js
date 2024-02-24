@@ -8,7 +8,7 @@ import Upload from './pages/Upload'
 function App() {
   let component
   switch (window.location.pathname) {
-    case "/":
+    case "/Home":
       component = <Home />
       console.log(window.location.pathname)
       break
@@ -28,7 +28,11 @@ function App() {
   return (
     <>
       <Navbar />
-      {component}
+      <div className="container">
+        {component}
+      </div>
+      {/* <h1>Hello!</h1> */}
+      {/* {component} */}
     </>
   );
 }
