@@ -5,6 +5,32 @@ require('@electron/remote/main').initialize()
 const { ipcMain } = require('electron');
 const AdmZip = require('adm-zip');
 const path = require('path')
+const ip = require("ip");
+
+const { initializeApp } = require("firebase/app");
+const { getDatabase, ref, set } = require("firebase/database");
+
+const firebaseConfig = {
+  apiKey: "AIzaSyBKhM8i6pPW3It-95FsRd9SsxtP4zwKbgI",
+  authDomain: "crowdcompute-25b5f.firebaseapp.com",
+  databaseURL: "https://crowdcompute-25b5f-default-rtdb.firebaseio.com/",
+  projectId: "crowdcompute-25b5f",
+  storageBucket: "crowdcompute-25b5f.appspot.com",
+  messagingSenderId: "80838752312",
+  appId: "1:80838752312:web:7f764415c21020d30b8ecd"
+};
+const firebaseApp = initializeApp(firebaseConfig);
+const database = getDatabase(firebaseApp);
+
+function writeData(path, data) {
+  set(ref(database, path), data)
+    .then(() => {
+      console.log("Data saved successfully!");
+    })
+    .catch((error) => {
+      console.log("Failed to write data:", error);
+    });
+}
 
 ipcMain.on('upload-file', (event, filePath) => {
   const zip = new AdmZip(filePath);
@@ -35,6 +61,8 @@ ipcMain.on('upload-file', (event, filePath) => {
         return;
       }
     });
+
+    writeData(`users/1`, {docker_username: "anirudhvenk", docker_repo: "runnable_image:1.0", ip_address: `${ip.address()}`})
   });
 });
 

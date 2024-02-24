@@ -12,7 +12,7 @@
     "cross-env": "^7.0.3",
     "electron-is-dev": "^3.0.1",
     "express": "^4.18.2",
-    "firebase": "^10.6.0",
+    "firebase": "^10.8.0",
     "node-gyp": "^10.0.1",
     "os": "^0.1.2",
     "ps-node": "^0.1.6",
@@ -25,7 +25,7 @@
   "main": "public/main.js",
   "homepage": "./",
   "scripts": {
-    "start": "react-scripts start",
+    "start": "react-scripts  --openssl-legacy-provider start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
