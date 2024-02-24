@@ -32,7 +32,7 @@ function Upload() {
             <div className="label">
                 <div className="flexcontainer">
                     <p className="text">
-                        <span className="text-wrapper">Upload Files</span>
+                        <span className="upload-wrapper">Upload Files</span>
                         <br />
                         <span className="span">Upload a zip file of your code and training data</span>
                     </p>

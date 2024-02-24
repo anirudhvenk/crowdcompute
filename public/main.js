@@ -1,24 +1,41 @@
 const { app, BrowserWindow } = require('electron')
-
+const { exec } = require('child_process');
 require('@electron/remote/main').initialize()
 
 const { ipcMain } = require('electron');
 const AdmZip = require('adm-zip');
+const path = require('path')
 
 ipcMain.on('upload-file', (event, filePath) => {
-    // Assuming filePath is the path to the zip file
-    const zip = new AdmZip(filePath);
-    console.log(zip)
-    const extractedPath = "./data"; // Define where to extract
-    zip.extractAllTo(extractedPath, true);
+  const zip = new AdmZip(filePath);
+  const extractedPath = "./data";
+  zip.extractAllTo(extractedPath, true);
 
-    const fileContents = zip.getEntries().map(entry => {
-        return {
-            entryName: entry.entryName,
-            content: entry.getData().toString('utf8') // Assuming text files. For binary files, you might handle differently.
-        };
+  const data_folder = zip.getEntries().map(entry => { return entry.entryName; })[0];
+  let dockerBuildCommand = `docker build -t runnable_image:1.0 ${path.join("../", extractedPath, data_folder)}`;
+  let dockerTagCommand = `docker tag runnable_image:1.0 anirudhvenk/runnable_image:1.0`;
+  let dockerPushCommand = `docker push anirudhvenk/runnable_image:1.0`
+
+  exec(dockerBuildCommand, { cwd: extractedPath }, (error, stdout, stderr) => {
+    if (error) {
+      console.error(`exec error: ${error}`);
+      return;
+    }
+
+    exec(dockerTagCommand, { cwd: extractedPath }, (error, stdout, stderr) => {
+      if (error) {
+        console.error(`exec error: ${error}`);
+        return;
+      }
     });
-    console.log(fileContents)
+
+    exec(dockerPushCommand, { cwd: extractedPath }, (error, stdout, stderr) => {
+      if (error) {
+        console.error(`exec error: ${error}`);
+        return;
+      }
+    });
+  });
 });
 
 const createWindow = () => {
@@ -26,11 +43,9 @@ const createWindow = () => {
     width: 800,
     height: 600,
     webPreferences: {
-      // preload: __dirname + 'preload.js',
       contextIsolation: false,
       enableRemoteModule: true,
       nodeIntegration: true
-      // preload: __dirname + '/preload.js'
     }
   })
 
@@ -40,11 +55,11 @@ const createWindow = () => {
 app.on('ready', createWindow)
 
 app.on('window-all-closed', function () {
-    if (process.platform !== 'darwin') {
-      app.quit()
-    }
+  if (process.platform !== 'darwin') {
+    app.quit()
+  }
 })
   
 app.on('activate', function () {
-    if (BrowserWindow.getAllWindows().length === 0) createWindow()
+  if (BrowserWindow.getAllWindows().length === 0) createWindow()
 })
