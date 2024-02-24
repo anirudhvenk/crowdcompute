@@ -1,0 +1,49 @@
+.side-nav {
+    background-color: #5065a8;
+    box-shadow: 0px 9.38px 93.85px #00000026;
+    height: 600px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 176px;
+}
+  
+.logo {
+    height: 108px;
+    left: 28px;
+    position: absolute;
+    top: 12px;
+    width: 114px;
+}
+  
+.nav-item {
+    align-items: center;
+    border-radius: 4px;
+    padding: 0px 8px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    gap:  15.02px;
+    left:  16px;
+    top:  150px;
+    width:  143px;
+    margin-bottom: 20px;
+}
+
+.nav-text {
+    color: #eff2f4;
+    font-family: "Gothic A1-Bold", Helvetica !important;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0.18px;
+    line-height: 22.5px;
+    margin-top: -0.94px;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
