@@ -1,4 +1,33 @@
+import React from "react";
+import { Filter } from "./Filter";
+import { NavItem } from "./NavItem";
+import { Setting } from "./Setting";
+import { ThreeUser } from "./ThreeUser";
+import "./style.css";
+
 export default function Host() {
+    return (
+        <div className="hosting">
+            <div className="div-2">
+                <div className="label">
+                    <div className="text-wrapper">Device Information</div>
+                </div>
+                <div className="text-wrapper">Device Information</div>
+                <div className="overlap-group">
+                    <img className="table" alt="Table" src="table.png" />
+                    <img className="img" alt="Table" src="image.png" />
+                    <div className="text-wrapper-2">CPU</div>
+                    <div className="text-wrapper-3">0</div>
+                </div>
+                <div className="overlap">
+                    <div className="rectangle" />
+                    <div className="text-wrapper-4">Submit</div>
+                </div>
+            </div>
+        </div>
+    );
+
+
     // Event listener for the submit button
     const submitButton = document.getElementById('submit-button');
     submitButton.addEventListener('click', handleSubmitButtonClick);

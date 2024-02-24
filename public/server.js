@@ -34,8 +34,8 @@ app.get('/get_system_info', (req, res) => {
             bandwidth: 0, // You may need to use additional libraries or commands to obtain network bandwidth information
         },
         Utilization: {
-            CPU: 0, // CPU utilization can be obtained using operating system-specific commands or libraries
-            GPU: 0, // GPU utilization can be obtained using operating system-specific commands or libraries
+            CPU: os.loadavg()[0] / os.cpus().length * 100, // CPU utilization can be obtained using operating system-specific commands or libraries
+            GPU: process.gpuUsage(), // GPU utilization can be obtained using operating system-specific commands or libraries
             memory: 0, // Memory utilization can be obtained using operating system-specific commands or libraries
         },
     };
