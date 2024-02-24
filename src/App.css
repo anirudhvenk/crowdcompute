@@ -38,6 +38,7 @@
 }
 
 .container {
-  margin: 1rem;
-  text-align: center;
+  display: flex;
+  flex-direction: column; /* Stacks children vertically */
+  height:  100vh; /* Full viewport height */
 }
