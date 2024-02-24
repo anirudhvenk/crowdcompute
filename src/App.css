@@ -1,38 +1,376 @@
-.App {
-  text-align: center;
+:root {
+  --default-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Ubuntu, "Helvetica Neue", Helvetica, Arial, "PingFang SC",
+    "Hiragino Sans GB", "Microsoft Yahei UI", "Microsoft Yahei",
+    "Source Han Sans CN", sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.main-container {
+  overflow: hidden;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.main-container,
+.main-container * {
+  box-sizing: border-box;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+input,
+select,
+textarea,
+button {
+  outline: 0;
+}
+
+.main-container {
+  position: relative;
+  width: 1440px;
+  height: 1024px;
+  margin: 0 auto;
+  background: #f2eee3;
+  overflow: hidden;
+}
+.side-nav {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  gap: 27px;
+  position: absolute;
+  width: 318px;
+  height: 1034px;
+  top: 0;
+  left: 0;
+  padding: 30.031px 22.523px 30.031px 22.523px;
+  background: #5065a8;
+  z-index: 3;
+  box-shadow: 0 9.385px 93.846px 0 rgba(0, 0, 0, 0.15);
+}
+.logo {
+  flex-shrink: 0;
+  position: absolute;
+  width: 204px;
+  height: 197px;
+  top: 30px;
+  left: 57px;
+  background: url(./assets/logo.svg)
+    no-repeat center;
+  background-size: cover;
+  z-index: 4;
+}
+.nav-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  flex-shrink: 0;
+  gap: 15.015px;
+  position: absolute;
+  width: 259.954px;
+  height: 165.169px;
+  top: 257px;
+  left: 29px;
+  z-index: 5;
+}
+.nav-item {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-shrink: 0;
+  position: relative;
+  width: 259.954px;
+  padding: 0 7.508px 0 7.508px;
+  z-index: 6;
+  border-radius: 3.754px;
+}
+.leading-icon-nav-link {
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-wrap: nowrap;
+  flex-shrink: 0;
+  position: relative;
+  width: 122.062px;
+  z-index: 7;
 }
-
-.App-link {
-  color: #61dafb;
+.leading-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  flex-shrink: 0;
+  position: relative;
+  width: 45.046px;
+  padding: 7.508px 7.508px 7.508px 7.508px;
+  z-index: 8;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.user {
+  flex-shrink: 0;
+  position: relative;
+  width: 30.031px;
+  height: 30.031px;
+  z-index: 9;
+  overflow: hidden;
+}
+.iconly-bold-user {
+  position: relative;
+  width: 27.528px;
+  height: 20.021px;
+  margin: 5.005px 0 0 1.251px;
+  background: url(./assets/users.svg)
+    no-repeat center;
+  background-size: 100% 100%;
+  z-index: 10;
+}
+.nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  flex-shrink: 0;
+  position: relative;
+  width: 77.015px;
+  padding: 7.508px 7.508px 7.508px 7.508px;
+  z-index: 11;
+}
+.dashboard {
+  flex-shrink: 0;
+  flex-basis: auto;
+  position: relative;
+  height: 23px;
+  color: #eff2f4;
+  font-family: Poppins, var(--default-font-family);
+  font-size: 26.01537322998047px;
+  font-weight: 700;
+  line-height: 22.523px;
+  text-align: left;
+  white-space: nowrap;
+  letter-spacing: 0.26px;
+  z-index: 12;
+}
+.nav-item-1 {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-shrink: 0;
+  position: relative;
+  width: 259.954px;
+  padding: 0 7.508px 0 7.508px;
+  z-index: 13;
+  border-radius: 3.754px;
+}
+.leading-icon-nav-link-2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  flex-shrink: 0;
+  position: relative;
+  width: 154.062px;
+  z-index: 14;
+}
+.leading-icon-3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  flex-shrink: 0;
+  position: relative;
+  width: 45.046px;
+  padding: 7.508px 7.508px 7.508px 7.508px;
+  z-index: 15;
+}
+.filter {
+  flex-shrink: 0;
+  position: relative;
+  width: 30.031px;
+  height: 30.031px;
+  z-index: 16;
+  overflow: hidden;
+}
+.iconly-bold-filter {
+  position: relative;
+  width: 25.026px;
+  height: 22.245px;
+  margin: 3.754px 0 0 2.503px;
+  background: url(./assets/upload.svg)
+    no-repeat center;
+  background-size: 100% 100%;
+  z-index: 17;
+}
+.nav-link-4 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  flex-shrink: 0;
+  position: relative;
+  width: 109.015px;
+  padding: 7.508px 7.508px 7.508px 7.508px;
+  z-index: 18;
+}
+.dashboard-5 {
+  flex-shrink: 0;
+  flex-basis: auto;
+  position: relative;
+  height: 23px;
+  color: #eff2f4;
+  font-family: Poppins, var(--default-font-family);
+  font-size: 25.015378952026367px;
+  font-weight: 700;
+  line-height: 22.523px;
+  text-align: left;
+  white-space: nowrap;
+  letter-spacing: 0.25px;
+  z-index: 19;
+}
+.nav-item-6 {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-shrink: 0;
+  position: relative;
+  width: 259.954px;
+  padding: 0 7.508px 0 7.508px;
+  z-index: 20;
+  border-radius: 3.754px;
+}
+.leading-icon-nav-link-7 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  flex-shrink: 0;
+  position: relative;
+  width: 143.062px;
+  z-index: 21;
+}
+.leading-icon-8 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  flex-shrink: 0;
+  position: relative;
+  width: 45.046px;
+  padding: 7.508px 7.508px 7.508px 7.508px;
+  z-index: 22;
+}
+.setting {
+  flex-shrink: 0;
+  position: relative;
+  width: 30.031px;
+  height: 30.031px;
+  z-index: 23;
+  overflow: hidden;
+}
+.iconly-bold-setting {
+  position: relative;
+  width: 23.774px;
+  height: 25.026px;
+  margin: 2.503px 0 0 3.128px;
+  background: url(./assets/setting.svg)
+    no-repeat center;
+  background-size: 100% 100%;
+  z-index: 24;
+}
+.nav-link-9 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  flex-shrink: 0;
+  position: relative;
+  width: 98.015px;
+  padding: 7.508px 7.508px 7.508px 7.508px;
+  z-index: 25;
+}
+.dashboard-a {
+  flex-shrink: 0;
+  flex-basis: auto;
+  position: relative;
+  height: 23px;
+  color: #eff2f4;
+  font-family: Poppins, var(--default-font-family);
+  font-size: 25.0153751373291px;
+  font-weight: 700;
+  line-height: 22.523px;
+  text-align: left;
+  white-space: nowrap;
+  letter-spacing: 0.25px;
+  z-index: 26;
+}
+.flex-column-ec {
+  position: absolute;
+  width: 621px;
+  height: 429px;
+  top: 298px;
+  left: 550px;
+  z-index: 2;
+}
+.rectangle {
+  position: relative;
+  width: 380px;
+  height: 308px;
+  margin: 0 0 0 121px;
+  cursor: pointer;
+  background: rgba(217, 217, 217, 0.2);
+  border: 1px solid #000000;
+  overflow: visible auto;
+  border-radius: 40px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+}
+.upload-logo {
+  position: relative;
+  width: 170px;
+  height: 144px;
+  margin: 82px 0 0 105px;
+  background: url(./assets/real_upload.svg)
+    no-repeat center;
+  background-size: cover;
+  z-index: 1;
+}
+.upload-files {
+  position: relative;
+  width: 621px;
+  height: 82px;
+  margin: 39px 0 0 0;
+  font-family: Poppins, var(--default-font-family);
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 22.523px;
+  text-align: center;
+  text-overflow: initial;
+  white-space: nowrap;
+  letter-spacing: 0.32px;
+  z-index: 2;
+}
+.upload-files-b {
+  position: relative;
+  color: #000000;
+  font-family: Poppins, var(--default-font-family);
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 48px;
+  text-align: center;
+  letter-spacing: 0.32px;
+}
+.upload-files-c {
+  position: relative;
+  color: #000000;
+  font-family: Poppins, var(--default-font-family);
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 22.523px;
+  text-align: center;
+  letter-spacing: 0.32px;
+}
+.upload-files-d {
+  position: relative;
+  color: #000000;
+  font-family: Poppins, var(--default-font-family);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: center;
+  letter-spacing: 0.32px;
 }
