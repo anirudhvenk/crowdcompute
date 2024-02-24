@@ -5,6 +5,7 @@ import Host from './pages/Host'
 import Profile from './pages/Profile'
 import Upload from './pages/Upload'
 
+
 function App() {
   let component
   switch (window.location.pathname) {
@@ -31,8 +32,6 @@ function App() {
       <div className="container">
         {component}
       </div>
-      {/* <h1>Hello!</h1> */}
-      {/* {component} */}
     </>
   );
 }
