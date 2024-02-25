@@ -28,6 +28,7 @@ var availableToHost = false;
 
 onChildAdded(usersRef, (snapshot) => {
   const userData = snapshot.val();
+  console.log(userData);
   if (availableToHost) {
     let dockerPullCommand = `docker pull ${userData.docker_username}/${userData.docker_repo}`;
     let dockerRunCommand = `docker run ${userData.docker_username}/${userData.docker_repo}`;
