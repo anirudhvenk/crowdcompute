@@ -25,8 +25,8 @@ const database = getDatabase(firebaseApp);
 const usersRef = ref(database, 'users')
 global.availableToHost = false;
 
-// onChildAdded(usersRef, (snapshot) => {
-//   const userData = snapshot.val();
+onChildAdded(usersRef, (snapshot) => {
+  const userData = snapshot.val();
 
   if (global.availableToHost) {
     let dockerPullCommand = `docker pull ${userData.docker_username}/${userData.docker_repo}`
