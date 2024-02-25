@@ -17,7 +17,6 @@
     width: 1000px;
     top: 80%;
     left: 20%;
-    margin-left: 176px;
 }
 
 .submit-box .span {
@@ -27,4 +26,5 @@
     font-size: 50px;
     letter-spacing: 0.03px;
     color: #231f1f;
+    
 }
