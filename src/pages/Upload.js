@@ -125,7 +125,7 @@ function Upload() {
     return (
         <>
             {downloadFinished ? (
-                <a href=downloadLink class="button-link">
+                <a href={downloadLink} class="button-link">
                      <button >Download Complete</button>
 
                 </a>
