@@ -27,7 +27,7 @@ const firebaseConfig = {
 const firebaseApp = initializeApp(firebaseConfig);
 const database = getDatabase(firebaseApp);
 const storage = getStorage(firebaseApp)
-const storageRef = sRef(storage, "weights")
+const storageRef = sRef(storage)
 const usersRef = ref(database, 'users')
 global.availableToHost = false;
 
@@ -80,7 +80,7 @@ onChildAdded(usersRef, (snapshot) => {
           if (error) {
             console.error(`exec error: ${error}`)
           }
-          let dockerCopyCommand = `docker cp ${containerID}:/test_model/test.txt ./data/out.txt`;
+          let dockerCopyCommand = `docker cp ${containerID}:/test_model/weights.pt ./data/weights.pt`;
           exec(dockerCopyCommand, { cwd: "./" }, (error, stdout, stderr) => {
             if (error) {
               console.error(`exec error: ${error}`)
@@ -94,7 +94,7 @@ onChildAdded(usersRef, (snapshot) => {
               // You can now use the 'file' variable to upload the file to Firebase Storage
             // console.log('Selected file:', file);
             console.log('./data/out.txt')
-            uploadFileToFirebaseStorage('./data/out.txt');
+            uploadFileToFirebaseStorage('./data/weights.pt');
             // } else {
               // console.error('No file selected.');
             // }
@@ -107,7 +107,7 @@ onChildAdded(usersRef, (snapshot) => {
 
 
 function uploadFileToFirebaseStorage(file) {
-  const fileRef = sRef(storage, "weights");
+  const fileRef = sRef(storage, "weights.pt");
   
   uploadBytes(fileRef, file).then((snapshot) => {
     console.log('Uploaded a blob or file!');
