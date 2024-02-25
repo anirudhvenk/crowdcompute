@@ -125,7 +125,7 @@ function Upload() {
     return (
         <>
             {downloadFinished ? (
-                <a href={downloadLink} className="centered-button" style={{ padding: '10px 20px', backgroundColor: '#3498db', color: '#ffffff', textDecoration: 'none', border: 'none', cursor: 'pointer', position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}>
+                <a href={downloadLink} className="centered-button" style={{ padding: '10px 20px', backgroundColor: '#3498db', color: '#ffffff', textDecoration: 'none', border: 'none', cursor: 'pointer', position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', marginLeft: '176px' }}>
                     Download Complete
                 </a>
               
