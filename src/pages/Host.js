@@ -1,15 +1,43 @@
-import React from "react";
-import "./host.css";
-
-const os = require('os');
+/*import React from "react";
+import { Filter } from "./Filter";
+import { NavItem } from "./NavItem";
+import { Setting } from "./Setting";
+import { ThreeUser } from "./ThreeUser";
+import "./style.css";
 
 export default function Host() {
-    // Event listener for the submit button
-    // const submitButton = document.getElementById('submit-button');
-    // submitButton.addEventListener('click', handleSubmitButtonClick);
-
-    return <h1>Host</h1>
+    return (<div/>)
 }
+
+// export default function Host() {
+//     return (
+//         <div className="hosting">
+//             <div className="div-2">
+//                 <div className="label">
+//                     <div className="text-wrapper">Device Information</div>
+//                 </div>
+//                 <div className="text-wrapper">Device Information</div>
+//                 <div className="overlap-group">
+//                     <img className="table" alt="Table" src="table.png" />
+//                     <img className="img" alt="Table" src="image.png" />
+//                     <div className="text-wrapper-2">CPU</div>
+//                     <div className="text-wrapper-3">0</div>
+//                 </div>
+//                 <div className="overlap">
+//                     <div className="rectangle" />
+//                     <div className="text-wrapper-4">Submit</div>
+//                 </div>
+//             </div>
+//         </div>
+//     );
+
+
+//     // Event listener for the submit button
+//     const submitButton = document.getElementById('submit-button');
+//     submitButton.addEventListener('click', handleSubmitButtonClick);
+
+//     return <h1>Host</h1>
+// }
 
 // // Function to fetch system data from the backend
 // async function fetchSystemData() {
@@ -46,40 +74,8 @@ export default function Host() {
 
 // Function to handle submit button click
 async function handleSubmitButtonClick() {
-    const systemInfo = {
-        CPU: {
-            cores: os.cpus().length,
-            model: os.cpus()[0].model,
-            speed: os.cpus()[0].speed,
-        },
-        GPU: {
-            name: 'N/A', // GPU information is more complex and platform-dependent; you may need to use additional libraries or commands to obtain this information
-            memory: 0,
-        },
-        RAM: {
-            total: os.totalmem(),
-            free: os.freemem(),
-        },
-        Disk: {
-            total: 0, // Disk information can vary across platforms; you may need to use additional libraries or commands to obtain this information
-            free: 0,
-        },
-        OS: {
-            platform: os.platform(),
-            release: os.release(),
-            architecture: os.arch(),
-        },
-        Network: {
-            latency: 0, // You may need to use additional libraries or commands to obtain network latency information
-            bandwidth: 0, // You may need to use additional libraries or commands to obtain network bandwidth information
-        },
-        Utilization: {
-            CPU: os.loadavg()[0] / os.cpus().length * 100, // CPU utilization can be obtained using operating system-specific commands or libraries
-            GPU: process.gpuUsage(), // GPU utilization can be obtained using operating system-specific commands or libraries
-            memory: 0, // Memory utilization can be obtained using operating system-specific commands or libraries
-        },
-    };
-    // if (systemData) {
-    //     submitSystemDataToFirebase(systemData);
-    // }
-}
+    const systemData = await fetchSystemData();
+    if (systemData) {
+        submitSystemDataToFirebase(systemData);
+    }
+}*/
