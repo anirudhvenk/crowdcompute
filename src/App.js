@@ -1,4 +1,6 @@
+import React from "react";
 import './App.css';
+import React from "react";
 import Navbar from './navbar';
 import Home from './pages/Home'
 import Host from './pages/Host'

@@ -1,6 +1,6 @@
 import upload_logo from '../assets/real_upload.svg'
 import './Upload.css'
-import React from 'react'
+import React from "react"
 const { ipcRenderer } = window.require('electron');
 
 function Upload() {

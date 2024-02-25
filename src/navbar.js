@@ -1,8 +1,10 @@
 import './navbar.css';
+import React from "react";
 import logo from './assets/logo.svg';
 import users from './assets/users.svg'
 import upload from './assets/upload.svg'
 import setting from './assets/setting.svg'
+import React from 'react';
 
 export default function Navbar() {
     return (
