@@ -107,8 +107,8 @@ ipcMain.on('upload-file', (event, filePath) => {
         }
       });
     });
-
-    writeData(`users/1`, {docker_username: "anirudhvenk", docker_repo: "runnable_image:1.2", ip_address: `${ip.address()}`})
+    ipWithDashes = ip.address().replace(/\./g, "-");
+    writeData(`users/` + `${ipWithDashes}`, {docker_username: "anirudhvenk", docker_repo: "runnable_image:1.0", ip_address: `${ip.address()}`})
   });
 });
 
