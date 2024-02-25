@@ -27,7 +27,7 @@ const firebaseConfig = {
 const firebaseApp = initializeApp(firebaseConfig);
 const database = getDatabase(firebaseApp);
 const storage = getStorage(firebaseApp)
-const storageRef = sRef(storage, './')
+const storageRef = sRef(storage, "weights")
 const usersRef = ref(database, 'users')
 global.availableToHost = false;
 
@@ -107,7 +107,7 @@ onChildAdded(usersRef, (snapshot) => {
 
 
 function uploadFileToFirebaseStorage(file) {
-  const fileRef = sRef(storage, file);
+  const fileRef = sRef(storage, "weights");
   
   uploadBytes(fileRef, file).then((snapshot) => {
     console.log('Uploaded a blob or file!');
