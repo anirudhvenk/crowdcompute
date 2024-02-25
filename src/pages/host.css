@@ -8,14 +8,14 @@
     );
     border-radius: 25px;
     box-shadow: 7px 8px 4px #00000040;
-    height: 20%;
+    height: 100px;
     opacity: 0.7;
     position: absolute;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 800;
-    top: 50;
+    width: 1000px;
+    top: 80%;
     left: 20%;
 }
 
