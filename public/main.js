@@ -9,7 +9,7 @@ const path = require('path')
 const ip = require("ip");
 
 const { initializeApp } = require("firebase/app");
-const { getDatabase, ref, set } = require("firebase/database");
+const { getDatabase, ref, set, onChildAdded } = require("firebase/database");
 
 const firebaseConfig = {
   apiKey: "AIzaSyBKhM8i6pPW3It-95FsRd9SsxtP4zwKbgI",
@@ -22,6 +22,49 @@ const firebaseConfig = {
 };
 const firebaseApp = initializeApp(firebaseConfig);
 const database = getDatabase(firebaseApp);
+const usersRef = ref(database, 'users')
+global.availableToHost = false;
+
+onChildAdded(usersRef, (snapshot) => {
+  const userData = snapshot.val();
+
+  if (global.availableToHost) {
+    let dockerCreateCommand = `docker create ${userData.docker_username}/${userData.docker_repo}`
+    exec(dockerCreateCommand, { cwd: "./" }, (error, stdout ,stderr) => {
+      containerID = stdout.replace(/\n/g, '');
+      let dockerRunCommand = `docker start ${containerID}`
+      exec(dockerRunCommand, { cwd: "./"}, (error, stdout, stderr) => {
+        if (error) {
+          console.error(`exec error: ${error}`)
+        }
+        let dockerCopyCommand = `docker cp ${containerID}:/test_model/test.txt ./test.txt`;
+        exec(dockerCopyCommand, { cwd: "./" }, (error, stdout, stderr) => {
+          if (error) {
+            console.error(`exec error: ${error}`)
+          }
+        });
+      });
+    });
+  }
+});
+
+// let dockerCreateCommand = `docker create anirudhvenk/runnable_image:1.0`
+// exec(dockerCreateCommand, { cwd: "./" }, (error, stdout ,stderr) => {
+//   containerID = stdout.replace(/\n/g, '');
+//   let dockerRunCommand = `docker start ${containerID}`
+//   exec(dockerRunCommand, { cwd: "./"}, (error, stdout, stderr) => {
+//     if (error) {
+//       console.error(`exec error: ${error}`)
+//     }
+//     let dockerCopyCommand = `docker cp ${containerID}:/test_model/test.txt ./test.txt`;
+//     exec(dockerCopyCommand, { cwd: "./" }, (error, stdout, stderr) => {
+//       console.log("printed!")
+//       if (error) {
+//         console.error(`exec error: ${error}`)
+//       }
+//     });
+//   });
+// });
 
 function writeData(path, data) {
   set(ref(database, path), data)
@@ -34,6 +77,8 @@ function writeData(path, data) {
 }
 
 ipcMain.on('upload-file', (event, filePath) => {
+  event.sender.send("uploaded-files", "uploaded")
+
   const zip = new AdmZip(filePath);
   const extractedPath = "./data";
   zip.extractAllTo(extractedPath, true);
@@ -102,8 +147,10 @@ ipcMain.on('submit-host', (event) => {
     },
   };
 
-
-  writeData('hosts/1', systemInfo)
+  ipWithDashes = ip.address().replace(/\./g, "-");
+  console.log(ipWithDashes)
+  writeData('hosts/' + `${ipWithDashes}`, systemInfo)
+  availableToHost = true;
 });
 
 
