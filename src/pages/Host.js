@@ -12,9 +12,18 @@ export default function Host() {
     };
    
     return (
+        <div>
         <div className="submit-box" style={{ backgroundColor: boxColor }} onClick={handleClick}>
             <span className="span">Submit</span>
         </div>
+        <input
+            type="text"
+            value={inputValue}
+            onChange={handleInputChange}
+            placeholder="Push submit to submit your computer as an available host for model training!"
+        />
+    </div>
+
 
     )
 }
