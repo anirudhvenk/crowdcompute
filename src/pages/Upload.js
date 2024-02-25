@@ -125,7 +125,11 @@ function Upload() {
     return (
         <>
             {downloadFinished ? (
-                <button href="https://google.com">Download Complete</button>
+                <a href=downloadLink class="button-link">
+                     <button >Download Complete</button>
+
+                </a>
+               
             ) : operationFinished ? (
                 <>
                     <progress className="progress" value={null}></progress>
