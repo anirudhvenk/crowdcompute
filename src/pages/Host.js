@@ -17,7 +17,7 @@ export default function Host() {
     return (
     <div
         className="BG"
-        style={{ backgroundColor: boxColor, height: '100px', width: '100px', margin: '20px' }}
+        
         onClick={handleClick}
     >
 
