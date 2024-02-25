@@ -29,6 +29,12 @@ export default function Navbar() {
                     <span class="nav-text">Profile</span>
                 </div>
             </a>
+            <a href="/Profile">
+                <div className="login-button" href="/Profile">
+                    <img src={setting}/>
+                    <span class="nav-text">Log In</span>
+                </div>
+            </a>
         </div>
     )
 }
