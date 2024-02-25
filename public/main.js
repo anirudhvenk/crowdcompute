@@ -31,13 +31,13 @@ onChildAdded(usersRef, (snapshot) => {
   if (availableToHost) {
     let dockerPullCommand = `docker pull ${userData.docker_username}/${userData.docker_repo}`;
     let dockerRunCommand = `docker run ${userData.docker_username}/${userData.docker_repo}`;
-    exec(dockerPullCommand, { cwd: extractedPath }, (error, stdout, stderr) => {
+    exec(dockerPullCommand, { cwd: "./" }, (error, stdout, stderr) => {
       if (error) {
         console.error(`exec error: ${error}`);
         return;
       }
 
-      exec(dockerRunCommand, { cwd: extractedPath }, (error, stdout, stderr) => {
+      exec(dockerRunCommand, { cwd: "./" }, (error, stdout, stderr) => {
         if (error) {
           console.error(`exec error: ${error}`);
           return;
