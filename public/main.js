@@ -28,26 +28,27 @@ var availableToHost = false;
 
 onChildAdded(usersRef, (snapshot) => {
   const userData = snapshot.val();
+  console.log(availableToHost)
   console.log(userData);
-  if (availableToHost) {
-    let dockerPullCommand = `docker pull ${userData.docker_username}/${userData.docker_repo}`;
-    let dockerRunCommand = `docker run ${userData.docker_username}/${userData.docker_repo}`;
-    exec(dockerPullCommand, { cwd: "./" }, (error, stdout, stderr) => {
-      console.log(stdout)
+  // if (availableToHost) {
+  let dockerPullCommand = `docker pull ${userData.docker_username}/${userData.docker_repo}`;
+  let dockerRunCommand = `docker run ${userData.docker_username}/${userData.docker_repo}`;
+  exec(dockerPullCommand, { cwd: "./" }, (error, stdout, stderr) => {
+    console.log(stdout)
+    if (error) {
+      console.error(`exec error: ${error}`);
+      return;
+    }
+
+    exec(dockerRunCommand, { cwd: "./" }, (error, stdout, stderr) => {
       if (error) {
         console.error(`exec error: ${error}`);
         return;
       }
-
-      exec(dockerRunCommand, { cwd: "./" }, (error, stdout, stderr) => {
-        if (error) {
-          console.error(`exec error: ${error}`);
-          return;
-        }
-      });
-        
     });
-  }
+      
+  });
+  // }
 });
 
 
