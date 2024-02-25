@@ -1,292 +1,170 @@
 .profile {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background: #F2EEE3;
-  height: 102vh; /* Full viewport height */
-  margin-left: 2%; /* Adjust as needed */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #F2EEE3;
+    height:  102vh; /* Full viewport height */
+    margin-left: 176px;
 }
 
-.profile .div-2 {
-  background-color: #f2eee3;
-  display: flex;
-  flex-direction: column;
-  height: 90vh; /* Adjust as needed */
-  overflow: hidden;
-  position: relative;
-  width: 90%; /* Adjust as needed */
-  max-width: 1440px;
-  margin: 0 auto; /* Center the container */
-}
 
-.profile .side-nav {
-  background-color: #5065a8;
-  box-shadow: 0px 9.38px 93.85px #00000026;
-  height: 90vh; /* Adjust as needed */
-  left: 0;
-  position: absolute;
-  top: -5px;
-  width: 20%; /* Adjust as needed */
-  max-width: 318px;
-}
 
-.profile .logo {
-  height: 10%; /* Adjust as needed */
-  left: 3%; /* Adjust as needed */
-  position: absolute;
-  top: 3%; /* Adjust as needed */
-  width: 14%; /* Adjust as needed */
-}
 
-.profile .nav-list {
-  align-items: flex-start;
-  display: inline-flex;
-  flex-direction: column;
-  gap: 1.5vh; /* Adjust as needed */
-  left: 2%; /* Adjust as needed */
-  position: absolute;
-  top: 25%; /* Adjust as needed */
-}
 
-.profile .nav-item-instance {
-  border-radius: 0.375em !important; /* Adjust as needed */
-  flex: 0 0 auto !important;
-  padding: 0 0.751em !important; /* Adjust as needed */
-  width: 25.995%; /* Adjust as needed */
-}
 
-.profile .design-component-instance-node {
-  padding: 0.751em !important; /* Adjust as needed */
-}
 
-.profile .icon-instance-node {
-  height: 3.003vw !important; /* Adjust as needed */
-  position: relative !important;
-  width: 3.003vw !important; /* Adjust as needed */
-}
 
-.profile .nav-item-2 {
-  font-family: "Poppins-Bold", Helvetica !important;
-  font-size: 2.6vw !important; /* Adjust as needed */
-  font-weight: 700 !important;
-  letter-spacing: 0.026vw !important; /* Adjust as needed */
-  line-height: 2.25vh !important; /* Adjust as needed */
-  margin-top: -0.094vw !important; /* Adjust as needed */
-}
 
-.profile .nav-item-3 {
-  font-family: "Poppins-Bold", Helvetica !important;
-  font-size: 2.5vw !important; /* Adjust as needed */
-  font-weight: 700 !important;
-  letter-spacing: 0.025vw !important; /* Adjust as needed */
-  line-height: 2.25vh !important; /* Adjust as needed */
-  margin-top: -0.094vw !important; /* Adjust as needed */
-}
-
-.profile .profile-sec {
-  height: 10%;
-  left: 2%;
-  position: relative;
-  width: 90%;
-  max-width: 1440px;
-  margin-top: 2%; /* Adjust as needed */
-}
-
-.profile .overlap-group {
-  height: 10%;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 25%; /* Adjust as needed */
-  max-width: 450px;
-}
 
 .profile .rectangle {
   background-color: #d9d9d9;
-  box-shadow: 2% 1% 1% #00000040;
-  height: 10%;
+  box-shadow: 9px 4px 4px #00000040;
+  height: 100px;
   left: 0;
   opacity: 0.4;
   position: absolute;
   top: 0;
-  width: 25%; /* Adjust as needed */
-  max-width: 450px;
+  width: 450px;
 }
 
 .profile .text-wrapper {
   color: #000000;
   font-family: "Poppins-Bold", Helvetica;
-  font-size: 3.2vw; /* Adjust as needed */
+  font-size: 32px;
   font-weight: 700;
-  left: 3.5%; /* Adjust as needed */
-  letter-spacing: 0.032vw;
-  line-height: 2.25vh; /* Adjust as needed */
+  left: 35px;
+  letter-spacing: 0.32px;
+  line-height: 22.5px;
   position: absolute;
   text-align: center;
-  top: 3.6vh; /* Adjust as needed */
-  width: 20%; /* Adjust as needed */
+  top: 36px;
+  width: 280px;
 }
 
 .profile .rectangle-2 {
   background-color: #d9d9d9;
-  border-radius: 2vw; /* Adjust as needed */
-  box-shadow: 2% 1% 1% #00000040;
-  height: 10%;
-  left: 38%; /* Adjust as needed */
+  border-radius: 20px;
+  box-shadow: 9px 4px 4px #00000040;
+  height: 100px;
+  left: 550px;
   opacity: 0.4;
   position: absolute;
   top: 0;
-  width: 25%; /* Adjust as needed */
-  max-width: 450px;
+  width: 450px;
 }
 
 .profile .profile-sec-2 {
-  height: 10%;
-  left: 2%;
-  position: relative;
-  width: 90%;
-  max-width: 1440px;
-  margin-top: 2%; /* Adjust as needed */
+  height: 100px;
+  left: 382px;
+  position: absolute;
+  top: 837px;
+  width: 1002px;
 }
 
 .profile .overlap {
-  border-radius: 2vw; /* Adjust as needed */
-  height: 10%;
+  border-radius: 20px;
+  height: 100px;
   left: 0;
   position: absolute;
   top: 0;
-  width: 25%; /* Adjust as needed */
-  max-width: 450px;
+  width: 450px;
 }
 
 .profile .rectangle-3 {
   background-color: #d9d9d9;
-  border-radius: 2vw; /* Adjust as needed */
-  box-shadow: 2% 1% 1% #00000040;
-  height: 10%;
+  border-radius: 20px;
+  box-shadow: 9px 4px 4px #00000040;
+  height: 100px;
   left: 0;
   opacity: 0.4;
   position: absolute;
   top: 0;
-  width: 25%; /* Adjust as needed */
-  max-width: 450px;
+  width: 450px;
 }
 
 .profile .text-wrapper-2 {
   color: #000000;
   font-family: "Poppins-Bold", Helvetica;
-  font-size: 3.2vw; /* Adjust as needed */
+  font-size: 32px;
   font-weight: 700;
-  left: 3.5%; /* Adjust as needed */
-  letter-spacing: 0.032vw;
-  line-height: 2.25vh; /* Adjust as needed */
+  left: 35px;
+  line-height: 22.5px;
   position: absolute;
   text-align: center;
-  top: 3.8vh; /* Adjust as needed */
-  width: 20%; /* Adjust as needed */
+  top: 38px;
+  width: 280px;
 }
 
 .profile .profile-sec-3 {
-  height: 10%;
-  left: 2%;
-  position: relative;
-  width: 90%;
-  max-width: 1440px;
-  margin-top: 2%; /* Adjust as needed */
+  height: 100px;
+  left: 382px;
+  position: absolute;
+  top: 447px;
+  width: 992px;
 }
 
 .profile .rectangle-4 {
   background-color: #d9d9d9;
-  border-radius: 2vw; /* Adjust as needed */
-  box-shadow: 2% 1% 1% #00000040;
-  height: 10%;
-  left: 54%; /* Adjust as needed */
+  border-radius: 20px;
+  box-shadow: 9px 4px 4px #00000040;
+  height: 100px;
+  left: 540px;
   opacity: 0.4;
   position: absolute;
   top: 0;
-  width: 25%; /* Adjust as needed */
-  max-width: 450px;
+  width: 450px;
 }
 
 .profile .group {
-  height: 10.1%;
-  left: 60.7%; /* Adjust as needed */
+  height: 101px;
+  left: 607px;
   position: absolute;
-  top: 7.6%; /* Adjust as needed */
-  width: 33.3%; /* Adjust as needed */
-  max-width: 480px;
+  top: 76px;
+  width: 480px;
 }
 
 .profile .div-wrapper {
   background-color: #0f314080;
-  box-shadow: 2% 1% 1% #00000040;
-  height: 10.1%;
+  box-shadow: 20px 10px 4px #00000040;
+  height: 101px;
   position: relative;
-  width: 31.5%; /* Adjust as needed */
-  max-width: 478px;
+  width: 478px;
 }
 
 .profile .text-wrapper-3 {
   color: #ffffff;
   font-family: "Poppins-Bold", Helvetica;
-  font-size: 3.2vw; /* Adjust as needed */
+  font-size: 32px;
   font-weight: 700;
-  left: 15.6%; /* Adjust as needed */
-  letter-spacing: 0.032vw;
-  line-height: 2.25vh; /* Adjust as needed */
+  left: 76px;
+  letter-spacing: 0.32px;
+  line-height: 22.5px;
   position: absolute;
   text-align: center;
-  text-shadow: 0px 2vw 0.4vw #00000040;
-  top: 2.9vh; /* Adjust as needed */
-  width: 21.7%; /* Adjust as needed */
+  text-shadow: 0px 20px 4px #00000040;
+  top: 29px;
+  width: 326px;
 }
 
 .profile .profile-sec-4 {
-  height: 10%;
-  left: 2%;
-  position: relative;
-  width: 90%;
-  max-width: 1440px;
-  margin-top: 2%; /* Adjust as needed */
+  height: 100px;
+  left: 382px;
+  position: absolute;
+  top: 642px;
+  width: 1002px;
 }
 
 .profile .text-wrapper-4 {
   color: #000000;
   font-family: "Poppins-Bold", Helvetica;
-  font-size: 3.2vw; /* Adjust as needed */
+  font-size: 32px;
   font-weight: 700;
-  left: 7%; /* Adjust as needed */
-  letter-spacing: 0.032vw;
-  line-height: 2.25vh; /* Adjust as needed */
+  left: 70px;
+  letter-spacing: 0.32px;
+  line-height: 22.5px;
   position: absolute;
   text-align: center;
-  top: 3.9vh; /* Adjust as needed */
-  width: 20%; /* Adjust as needed */
-}
-
-/* Responsive styles */
-@media (max-width: 768px) {
-  .profile {
-    margin-left: 5%; /* Adjust as needed */
-  }
-
-  .profile .div-2 {
-    width: 95%; /* Adjust as needed */
-  }
-
-  .profile .side-nav {
-    width: 100%;
-    max-width: none;
-  }
-
-  .profile .logo {
-    width: 20%; /* Adjust as needed */
-  }
-
-  .profile .nav-list {
-    gap: 1vh; /* Adjust as needed */
-  }
-
-  /* Adjust other styles for smaller screens */
+  top: 40px;
+  width: 280px;
 }
