@@ -45,6 +45,24 @@ onChildAdded(usersRef, (snapshot) => {
   });
 });
 
+// let dockerCreateCommand = `docker create anirudhvenk/runnable_image:1.0`
+// exec(dockerCreateCommand, { cwd: "./" }, (error, stdout ,stderr) => {
+//   containerID = stdout.replace(/\n/g, '');
+//   let dockerRunCommand = `docker start ${containerID}`
+//   exec(dockerRunCommand, { cwd: "./"}, (error, stdout, stderr) => {
+//     if (error) {
+//       console.error(`exec error: ${error}`)
+//     }
+//     let dockerCopyCommand = `docker cp ${containerID}:/test_model/test.txt ./test.txt`;
+//     exec(dockerCopyCommand, { cwd: "./" }, (error, stdout, stderr) => {
+//       console.log("printed!")
+//       if (error) {
+//         console.error(`exec error: ${error}`)
+//       }
+//     });
+//   });
+// });
+
 function writeData(path, data) {
   set(ref(database, path), data)
     .then(() => {
