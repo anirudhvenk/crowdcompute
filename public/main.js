@@ -9,7 +9,7 @@ const path = require('path')
 const ip = require("ip");
 
 const { initializeApp } = require("firebase/app");
-const { getDatabase, ref, set } = require("firebase/database");
+const { getDatabase, ref, set, onChildAdded } = require("firebase/database");
 
 const firebaseConfig = {
   apiKey: "AIzaSyBKhM8i6pPW3It-95FsRd9SsxtP4zwKbgI",
@@ -22,6 +22,32 @@ const firebaseConfig = {
 };
 const firebaseApp = initializeApp(firebaseConfig);
 const database = getDatabase(firebaseApp);
+const usersRef = ref(database, 'users')
+var availableToHost = false;
+
+
+onChildAdded(usersRef, (snapshot) => {
+  const userData = snapshot.val();
+  if (availableToHost) {
+    let dockerPullCommand = `docker pull ${userData.docker_username}/${userData.docker_repo}`;
+    let dockerRunCommand = `docker run ${userData.docker_username}/${userData.docker_repo}`;
+    exec(dockerPullCommand, { cwd: extractedPath }, (error, stdout, stderr) => {
+      if (error) {
+        console.error(`exec error: ${error}`);
+        return;
+      }
+
+      exec(dockerRunCommand, { cwd: extractedPath }, (error, stdout, stderr) => {
+        if (error) {
+          console.error(`exec error: ${error}`);
+          return;
+        }
+      });
+        
+    });
+  }
+});
+
 
 function writeData(path, data) {
   set(ref(database, path), data)
@@ -104,8 +130,8 @@ ipcMain.on('submit-host', (event) => {
     },
   };
 
-
   writeData('hosts/1', systemInfo)
+  availableToHost = true;
 });
 
 
