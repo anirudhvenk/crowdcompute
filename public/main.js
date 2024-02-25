@@ -85,18 +85,19 @@ onChildAdded(usersRef, (snapshot) => {
             if (error) {
               console.error(`exec error: ${error}`)
             }
-            const fileInput = document.getElementById('fileInput');
+            // const fileInput = document.getElementById('fileInput');
             
             // Check if a file is selected
-            if (fileInput.files.length > 0) {
-              const file = fileInput.files[0]; // Get the first file from the file input
+            // if (fileInput.files.length > 0) {
+            // const file = fileInput.files[0]; // Get the first file from the file input
               
               // You can now use the 'file' variable to upload the file to Firebase Storage
-              console.log('Selected file:', file);
-              uploadFileToFirebaseStorage(file);
-            } else {
-              console.error('No file selected.');
-            }
+            // console.log('Selected file:', file);
+            console.log('./data/out.txt')
+            uploadFileToFirebaseStorage('./data/out.txt');
+            // } else {
+              // console.error('No file selected.');
+            // }
           });
         });
       });
