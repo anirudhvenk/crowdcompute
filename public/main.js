@@ -48,7 +48,7 @@ onChildAdded(usersRef, (snapshot) => {
   }
 });
 
-// let dockerCreateCommand = `docker create anirudhvenk/runnable_image:1.0`
+// let dockerCreateCommand = `docker create anirudhvenk/runnable_image:1.1`
 // exec(dockerCreateCommand, { cwd: "./" }, (error, stdout ,stderr) => {
 //   containerID = stdout.replace(/\n/g, '');
 //   let dockerRunCommand = `docker start ${containerID}`
@@ -84,9 +84,9 @@ ipcMain.on('upload-file', (event, filePath) => {
   zip.extractAllTo(extractedPath, true);
 
   const data_folder = zip.getEntries().map(entry => { return entry.entryName; })[0];
-  let dockerBuildCommand = `docker build -t runnable_image:1.0 ${path.join("../", extractedPath, data_folder)}`;
-  let dockerTagCommand = `docker tag runnable_image:1.0 anirudhvenk/runnable_image:1.0`;
-  let dockerPushCommand = `docker push anirudhvenk/runnable_image:1.0`
+  let dockerBuildCommand = `docker build -t runnable_image:1.2 ${path.join("../", extractedPath, data_folder)}`;
+  let dockerTagCommand = `docker tag runnable_image:1.2 anirudhvenk/runnable_image:1.2`;
+  let dockerPushCommand = `docker push anirudhvenk/runnable_image:1.2`
 
   exec(dockerBuildCommand, { cwd: extractedPath }, (error, stdout, stderr) => {
     if (error) {
@@ -99,16 +99,16 @@ ipcMain.on('upload-file', (event, filePath) => {
         console.error(`exec error: ${error}`);
         return;
       }
+
+      exec(dockerPushCommand, { cwd: extractedPath }, (error, stdout, stderr) => {
+        if (error) {
+          console.error(`exec error: ${error}`);
+          return;
+        }
+      });
     });
 
-    exec(dockerPushCommand, { cwd: extractedPath }, (error, stdout, stderr) => {
-      if (error) {
-        console.error(`exec error: ${error}`);
-        return;
-      }
-    });
-
-    writeData(`users/1`, {docker_username: "anirudhvenk", docker_repo: "runnable_image:1.0", ip_address: `${ip.address()}`})
+    writeData(`users/1`, {docker_username: "anirudhvenk", docker_repo: "runnable_image:1.2", ip_address: `${ip.address()}`})
   });
 });
 
