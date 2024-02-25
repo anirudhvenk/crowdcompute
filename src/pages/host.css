@@ -14,9 +14,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 1000px;
-    top: 80%;
-    left: 12.5%;
+    width: 200px;
+    top: 30%;
+    left: 25%;
     margin-left: 176px;
 }
 
@@ -24,8 +24,8 @@
     font-weight: 700;
     letter-spacing: 0.04px;
     font-family: "Gothic A1-Regular", Helvetica;
-    font-size: 50px;
+    font-size: 30px;
     letter-spacing: 0.03px;
-    color: #231f1f;
+    color: #FFFFFF;
     
 }
