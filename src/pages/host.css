@@ -8,15 +8,16 @@
     );
     border-radius: 25px;
     box-shadow: 7px 8px 4px #00000040;
-    height: 169px;
+    height: 100px;
     opacity: 0.7;
     position: absolute;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 405px;
-    top: 100px;
-    left: 275px;
+    width: 1000px;
+    top: 80%;
+    left: 12.5%;
+    margin-left: 176px;
 }
 
 .submit-box .span {
@@ -25,5 +26,6 @@
     font-family: "Gothic A1-Regular", Helvetica;
     font-size: 50px;
     letter-spacing: 0.03px;
-    color: #FFFFFF;
+    color: #231f1f;
+    
 }
