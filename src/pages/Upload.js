@@ -128,8 +128,6 @@ function Upload() {
                 <a href={downloadLink} className="centered-button" style={{ padding: '10px 20px', backgroundColor: '#3498db', color: '#ffffff', textDecoration: 'none', border: 'none', cursor: 'pointer' }}>
                  Download Complete
                 </a>
-              
-               
             ) : operationFinished ? (
                 <>
                     <progress className="progress" value={null}></progress>
