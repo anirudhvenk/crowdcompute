@@ -3,13 +3,19 @@ import "./host.css";
 const { ipcRenderer } = window.require('electron');
 
 export default function Host() {
-    const [boxColor, setBoxColor] = useState(''); // Initialize with an empty string or your default color
+    const [boxColor, setBoxColor] = useState(''); 
+    const [inputValue, setInputValue] = useState('');
+    // Initialize with an empty string or your default color
 
     const handleClick = () => {
         ipcRenderer.send("submit-host");
         setBoxColor('green');
 
     };
+    const handleInputChange = (event) => {
+        setInputValue(event.target.value);
+    };
+
    
     return (
         <div>
