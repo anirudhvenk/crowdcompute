@@ -1,9 +1,9 @@
-import React from "react";
-// import { Filter } from "../assets/Filter";
-// import { NavItem } from "../assets/NavItem";
-// import { Setting } from "../assets/Setting";
-// import { ThreeUser } from "../assets/ThreeUser";
-// import "./style.css";
+/*import React from "react";
+import { Filter } from "./Filter";
+import { NavItem } from "./NavItem";
+import { Setting } from "./Setting";
+import { ThreeUser } from "./ThreeUser";
+import "./style.css";
 
 export default function Host() {
     return (<div/>)
@@ -72,10 +72,10 @@ export default function Host() {
 //     console.log('System data submitted to Firebase:', systemData);
 // }
 
-// // Function to handle submit button click
-// async function handleSubmitButtonClick() {
-//     const systemData = await fetchSystemData();
-//     if (systemData) {
-//         submitSystemDataToFirebase(systemData);
-//     }
-// }
+// Function to handle submit button click
+async function handleSubmitButtonClick() {
+    const systemData = await fetchSystemData();
+    if (systemData) {
+        submitSystemDataToFirebase(systemData);
+    }
+}*/

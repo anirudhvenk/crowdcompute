@@ -7,6 +7,7 @@ import Profile from './pages/Profile'
 import Upload from './pages/Upload'
 
 
+
 function App() {
   let component
   switch (window.location.pathname) {
