@@ -1,23 +1,21 @@
 .profile {
   display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background: #F2EEE3;
-    height:  102vh; /* Full viewport height */
-    margin-left: 176px;
-    
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #F2EEE3;
+  height:  102vh; /* Full viewport height */
+  margin-left: 176px;
 }
 
-
-
-
-.profile .logo {
-  height: 197px;
-  left: 57px;
-  position: absolute;
-  top: 30px;
-  width: 204px;
+.profile .div-2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width:  100%;
+  max-width:  800px; /* Adjust based on your design */
+  margin:  0 auto;
 }
 
 
@@ -191,5 +189,3 @@
   top: 40px;
   width: 280px;
 }
-
-
