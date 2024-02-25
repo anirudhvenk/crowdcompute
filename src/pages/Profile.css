@@ -10,7 +10,7 @@
 
 .profile .div-2 {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   width:  100%;
@@ -19,19 +19,9 @@
 }
 
 
-.profile .group {
-  height: 100px;
-  left: 372px;
-  position: absolute;
-  top: 204px;
-  width: 1000px;
-}
 
-.profile .profile-sec {
-  height: 100px;
-  position: relative;
-  width: 1002px;
-}
+
+
 
 .profile .overlap-group {
   border-radius: 20px;
@@ -189,3 +179,15 @@
   top: 40px;
   width: 280px;
 }
+@media (max-width:  768px) {
+  .div-2 {
+    max-width:  90%; /* Adjust the width for smaller screens */
+  }
+}
+
+@media (max-width:  480px) {
+  .div-2 {
+    max-width:  95%; /* Even smaller screens */
+  }
+}
+
