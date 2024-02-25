@@ -15,8 +15,8 @@ export default function Host() {
 
    
     return (
-    <div className="BG" style={{ background: '#F2EEE3' }}>
-        <div className="submit-box" style={{ backgroundColor: boxColor , background:  '#F2EEE3' }} onClick={handleClick}>
+    <div className="BG">
+        <div className="submit-box" style={{ backgroundColor: boxColor }} onClick={handleClick}>
             <span className="span">Submit</span>
         </div>
         < p style={{ textAlign: 'center', marginTop: '500px', fontWeight: 'bold' , marginLeft:'176px', fontSize: '22px'}}>
