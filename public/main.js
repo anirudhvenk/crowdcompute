@@ -11,6 +11,8 @@ const ip = require("ip");
 const { initializeApp } = require("firebase/app");
 const { getDatabase, ref, set, onChildAdded } = require("firebase/database");
 
+import { getStorage, ref, uploadBytes } from "firebase/storage";
+
 const firebaseConfig = {
   apiKey: "AIzaSyBKhM8i6pPW3It-95FsRd9SsxtP4zwKbgI",
   authDomain: "crowdcompute-25b5f.firebaseapp.com",
@@ -51,12 +53,33 @@ onChildAdded(usersRef, (snapshot) => {
             if (error) {
               console.error(`exec error: ${error}`)
             }
+            const fileInput = document.getElementById('fileInput');
+            
+            // Check if a file is selected
+            if (fileInput.files.length > 0) {
+              const file = fileInput.files[0]; // Get the first file from the file input
+              
+              // You can now use the 'file' variable to upload the file to Firebase Storage
+              console.log('Selected file:', file);
+              uploadFileToFirebaseStorage(file);
+            } else {
+              console.error('No file selected.');
+            }
           });
         });
       });
     });
   }
 });
+
+function uploadFileToFirebaseStorage(file) {
+  const storage = getStorage();
+  const fileRef = ref(storage);
+  
+  uploadBytes(fileRef, file).then((snapshot) => {
+    console.log('Uploaded a blob or file!');
+  });
+}
 
 // let dockerCreateCommand = `docker create anirudhvenk/runnable_image:1.0`
 // exec(dockerCreateCommand, { cwd: "./" }, (error, stdout ,stderr) => {
