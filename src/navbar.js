@@ -4,6 +4,7 @@ import logo from './assets/logo.svg';
 import users from './assets/users.svg'
 import upload from './assets/upload.svg'
 import setting from './assets/setting.svg'
+import github from './assets/github.svg'
 
 export default function Navbar() {
     return (
@@ -29,9 +30,9 @@ export default function Navbar() {
                     <span class="nav-text">Profile</span>
                 </div>
             </a>
-            <a href="/Profile">
-                <div className="login-button" href="/Profile">
-                    <img src={setting}/>
+            <a href="/Login">
+                <div className="nav-item" href="/Login">
+                    <img src={github}/>
                     <span class="nav-text">Log In</span>
                 </div>
             </a>

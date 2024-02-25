@@ -7,6 +7,12 @@ import Profile from './pages/Profile';
 import Upload from './pages/Upload';
 import GitHubOAuth from './GitHubOAuth';
 
+// const express = require('express');
+// const session = require('express-session');
+// const { initialize, session: sessionMiddleware } = require('./auth');
+// const routes = require('./routes');
+
+// const app = express();
 
 
 function App() {
@@ -27,6 +33,10 @@ function App() {
     case "/Upload":
       component = <Upload />
       console.log(window.location.pathname)
+      break
+    case "/Login":
+      console.log(window.location.pathname)
+      component = <GitHubOAuth />
       break
   }
   return (
