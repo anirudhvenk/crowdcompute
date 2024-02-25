@@ -133,6 +133,7 @@ ipcMain.on('submit-host', (event) => {
   ipWithDashes = ip.address().replace(/\./g, "-");
   console.log(ipWithDashes)
   writeData('hosts/' + `${ipWithDashes}`, systemInfo)
+  availableToHost = true;
 });
 
 
