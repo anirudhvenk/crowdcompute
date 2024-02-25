@@ -1,61 +1,11 @@
 import React from "react";
-import { Filter } from "./Filter";
-import { NavItem } from "./NavItem";
-import { Setting } from "./Setting";
-import { ThreeUser } from "./ThreeUser";
-import "./style.css";
 
-export const Profile = () => {
+import "./Profile.css";
+
+export default function Profile () {
   return (
     <div className="profile">
-      <div className="div-2">
-        <div className="side-nav">
-          <img className="logo" alt="Logo" src="logo.png" />
-          <div className="nav-list">
-            <NavItem
-              badge={false}
-              className="nav-item-instance"
-              divClassName="nav-item-2"
-              icon
-              leadingIconClassName="design-component-instance-node"
-              mode="dark"
-              navLink
-              navLinkClassName="design-component-instance-node"
-              override={<ThreeUser className="icon-instance-node" />}
-              state="default"
-              text="Host"
-              trailingIcon={false}
-            />
-            <NavItem
-              badge={false}
-              className="nav-item-instance"
-              divClassName="nav-item-3"
-              icon
-              leadingIconClassName="design-component-instance-node"
-              mode="dark"
-              navLink
-              navLinkClassName="design-component-instance-node"
-              override={<Filter className="icon-instance-node" />}
-              state="default"
-              text="Upload"
-              trailingIcon={false}
-            />
-            <NavItem
-              badge={false}
-              className="nav-item-instance"
-              divClassName="nav-item-3"
-              icon
-              leadingIconClassName="design-component-instance-node"
-              mode="dark"
-              navLink
-              navLinkClassName="design-component-instance-node"
-              override={<Setting className="icon-instance-node" color="#EFF2F4" />}
-              state="default"
-              text="Profile"
-              trailingIcon={false}
-            />
-          </div>
-        </div>
+      
         <div className="profile-sec">
           <div className="overlap-group">
             <div className="rectangle" />
@@ -95,6 +45,6 @@ export const Profile = () => {
           </div>
         </div>
       </div>
-    </div>
+    
   );
 };

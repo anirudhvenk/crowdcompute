@@ -1,4 +1,4 @@
-import React from "react";
+/*import React from "react";
 import { Filter } from "./Filter";
 import { NavItem } from "./NavItem";
 import { Setting } from "./Setting";
@@ -74,4 +74,4 @@ async function handleSubmitButtonClick() {
     if (systemData) {
         submitSystemDataToFirebase(systemData);
     }
-}
+}*/
