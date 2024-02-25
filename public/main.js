@@ -27,7 +27,7 @@ const firebaseConfig = {
 const firebaseApp = initializeApp(firebaseConfig);
 const database = getDatabase(firebaseApp);
 const storage = getStorage(firebaseApp)
-const storageRef = sRef(storage)
+const storageRef = sRef(storage, './')
 const usersRef = ref(database, 'users')
 global.availableToHost = false;
 
