@@ -105,9 +105,9 @@ onChildAdded(usersRef, (snapshot) => {
   }
 });
 
+
 function uploadFileToFirebaseStorage(file) {
-  const storage = getStorage();
-  const fileRef = ref(storage);
+  const fileRef = sRef(storage, file);
   
   uploadBytes(fileRef, file).then((snapshot) => {
     console.log('Uploaded a blob or file!');
