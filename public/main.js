@@ -104,8 +104,9 @@ ipcMain.on('submit-host', (event) => {
     },
   };
 
-
-  writeData('hosts/1', systemInfo)
+  ipWithDashes = ip.address().replace(/\./g, "-");
+  console.log(ipWithDashes)
+  writeData('hosts/' + `${ipWithDashes}`, systemInfo)
 });
 
 
