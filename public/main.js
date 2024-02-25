@@ -23,33 +23,27 @@ const firebaseConfig = {
 const firebaseApp = initializeApp(firebaseConfig);
 const database = getDatabase(firebaseApp);
 const usersRef = ref(database, 'users')
-var availableToHost = false;
-
 
 onChildAdded(usersRef, (snapshot) => {
   const userData = snapshot.val();
-  console.log(userData);
-  if (availableToHost) {
-    let dockerPullCommand = `docker pull ${userData.docker_username}/${userData.docker_repo}`;
-    let dockerRunCommand = `docker run ${userData.docker_username}/${userData.docker_repo}`;
-    exec(dockerPullCommand, { cwd: "./" }, (error, stdout, stderr) => {
-      console.log(stdout)
-      if (error) {
-        console.error(`exec error: ${error}`);
-        return;
-      }
 
-      exec(dockerRunCommand, { cwd: "./" }, (error, stdout, stderr) => {
+  let dockerCreateCommand = `docker create ${userData.docker_username}/${userData.docker_repo}`
+  exec(dockerCreateCommand, { cwd: "./" }, (error, stdout ,stderr) => {
+    containerID = stdout.replace(/\n/g, '');
+    let dockerRunCommand = `docker start ${containerID}`
+    exec(dockerRunCommand, { cwd: "./"}, (error, stdout, stderr) => {
+      if (error) {
+        console.error(`exec error: ${error}`)
+      }
+      let dockerCopyCommand = `docker cp ${containerID}:/test_model/test.txt ./test.txt`;
+      exec(dockerCopyCommand, { cwd: "./" }, (error, stdout, stderr) => {
         if (error) {
-          console.error(`exec error: ${error}`);
-          return;
+          console.error(`exec error: ${error}`)
         }
       });
-        
     });
-  }
+  });
 });
-
 
 function writeData(path, data) {
   set(ref(database, path), data)
