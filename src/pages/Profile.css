@@ -4,39 +4,39 @@
   justify-content: flex-start; /* Align items to the left */
   align-items: center;
   height: 100vh;
-  padding-left: 12.2222222222%; /* Adjusted padding to keep space on the left */
+  padding-left: 176px; /* Adjusted padding to keep space on the left */
 }
 
 .div-2 {
   display: flex;
   flex-direction: column; /* Adjusted to stack rectangles vertically */
   align-items: flex-start; /* Align rectangles to the left */
-  margin-left: 13.8888888889%; /* Adjusted margin to provide spacing between rectangles and the left edge */
+  margin-left: 200px; /* Adjusted margin to provide spacing between rectangles and the left edge */
 }
 
 .rectangle {
-  width: 31.25%;
-  height: 9.7%;
+  width: 450px;
+  height: 100px;
   flex-shrink: 0;
-  border-radius: 0.001356336%;
+  border-radius: 20px;
   opacity: 0.4;
   background: #D9D9D9;
-  margin-bottom: 1.953125%; /* Adjusted margin to provide spacing between rectangles */
+  margin-bottom: 20px; /* Adjusted margin to provide spacing between rectangles */
   position: relative;
 }
 
 .rectangle-2 {
-  width: 31.25%;
-  height: 9.7%;
+  width: 450px;
+  height: 100px;
   flex-shrink: 0;
-  border-radius: 0.001356336%;
+  border-radius: 20px;
   opacity: 0.4;
   background: #D9D9D9;
-  margin-left: 5.20833333333%; /* Adjust margin as needed */
+  margin-left: 75px; /* Adjust margin as needed */
 }
 
 .text-wrapper {
-  margin-top: 0.9765625%;
+  margin-top: 10px;
 }
 
 .overlap-group,
@@ -50,18 +50,18 @@
 .div-wrapper {
   display: flex;
   justify-content: center;
-  margin-top: 1.953125%;
+  margin-top: 20px;
 }
 
 .profile-title {
   position: absolute; /* Position the title */
-  top: 1.953125%; /* Adjust top position */
+  top: 20px; /* Adjust top position */
   left: 50%; /* Align at the horizontal center */
   transform: translateX(-50%); /* Center horizontally */
   font-size: 24px; /* Adjust font size */
   font-weight: bold; /* Make it bold */
-  margin-left: 6.59722222222%;
-  margin-top: 4.8828125%;
+  margin-left: 95px;
+  margin-top: 50px;
 }
 
 .rectangle-text {
@@ -70,7 +70,7 @@
   left: 50%; /* Align at the horizontal center */
   transform: translate(-50%, -50%); /* Center both horizontally and vertically */
   transform: translate(-50%, -50%); /* Center both horizontally and vertically */
-  color: rgb(0, 0, 0); /* Set text color to black */
+  color: black; /* Set text color to black */
   font-weight: bold; /* Make text bold */
   font-size: 18px; /* Increase font size */
   
