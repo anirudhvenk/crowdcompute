@@ -1,70 +1,23 @@
-# Getting Started with Create React App
+## Inspiration
+In today's fast-paced world, computational power is in high demand. Whether it's training machine learning models, performing complex simulations, or running data analysis tasks, the need for computing resources is ever-present. However, the cost and availability of such resources, being mostly limited to the big three providers of AWS, GCP, and Azure, can often be a limiting factor for individuals and organizations alike.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## What it does
+Our project aims to democratize and revolutionize the way users access and utilize computing resources by leveraging the power of idle computers around the world. Imagine being able to tap into the unused processing power of computers in homes, offices, and even data centers, all with the click of a button.
+Our project simply enables users to submit their models for training through our platform. We then match each task to a remote host optimized for the host’s specific computer specs and project requirements.
 
-## Available Scripts
+## How we built it
+We built this tool by creating a web app using Electron and React. After a user uploads a zip file, a subprocess is launched to create a docker image which is pushed to the docker hub, with the metadata being pushed to Firebase. From the host’s end, we launch a subprocess to pull this docker image and run it in a container. Once the model finishes training, the host automatically uploads the weights to Firebase storage. Finally, from the user’s end, we are able to pull and obtain the weights by polling the Firebase storage database.
 
-In the project directory, you can run:
+## Challenges we ran into
+Throughout our journey, we've encountered challenges such as uploading and downloading to and from Docker, figuring out how to create an impressive front-end, and connecting Electron with Docker and React. However, over the weekend, we found solutions to overcome these obstacles.
 
-### `npm start`
+## Accomplishments that we're proud of
+We are proud of being able to actually implement the training process on a host computer. By creating a docker image, and pulling said image from the host computer, we avoid having to deal with dependency management issues and can simply train the model, and send back the weights extremely easily. We are also proud of seamlessly integrating this with Firebase in terms of the uploading and downloading of the weights file after the training has finished.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## What we learned
+Docker. Firebase. How to center a div.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## What's next for CrowdCompute
+In the future, we have the following ideas to enhance our product:
+1. We will encrypt the data to make sure no malware is sent to the host, and to make sure that the host computers cannot access the raw files (through any means)
+2. We will make it possible for users to submit tasks that can be trained on multiple host computers, to both make training faster and more efficient, as well as make the data more private and decentralized
