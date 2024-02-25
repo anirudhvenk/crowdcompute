@@ -62,3 +62,20 @@
     font-size: 14px;
     letter-spacing: 0.03px;
 }
+
+.progress {
+    left: 387px;
+    top: 148px;
+    display: flex;
+    position: absolute;
+}
+
+.progress-text {
+    font-family: "Gothic A1-Bold", Helvetica;
+    font-size: 20px;
+    letter-spacing: 0.03px;
+    position: absolute;
+    display: flex;
+    left: 400px;
+    top: 115px;
+}

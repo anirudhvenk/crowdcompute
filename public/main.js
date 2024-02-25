@@ -34,6 +34,8 @@ function writeData(path, data) {
 }
 
 ipcMain.on('upload-file', (event, filePath) => {
+  event.sender.send("uploaded-files", "uploaded")
+
   const zip = new AdmZip(filePath);
   const extractedPath = "./data";
   zip.extractAllTo(extractedPath, true);
