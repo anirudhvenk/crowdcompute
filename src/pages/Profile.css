@@ -1,4 +1,5 @@
 .profile {
+  position:relative;
   display: flex;
   justify-content: flex-start; /* Align items to the left */
   align-items: center;
@@ -21,6 +22,7 @@
   opacity: 0.4;
   background: #D9D9D9;
   margin-bottom: 20px; /* Adjusted margin to provide spacing between rectangles */
+  position: relative;
 }
 
 .rectangle-2 {
@@ -49,4 +51,26 @@
   display: flex;
   justify-content: center;
   margin-top: 20px;
+}
+
+.profile-title {
+  position: absolute; /* Position the title */
+  top: 20px; /* Adjust top position */
+  left: 50%; /* Align at the horizontal center */
+  transform: translateX(-50%); /* Center horizontally */
+  font-size: 24px; /* Adjust font size */
+  font-weight: bold; /* Make it bold */
+  margin-left: 95px;
+  margin-top: 50px;
+}
+
+.rectangle-text {
+  position: absolute; /* Position the text */
+  top: 50%; /* Align at the vertical center */
+  left: 50%; /* Align at the horizontal center */
+  transform: translate(-50%, -50%); /* Center both horizontally and vertically */
+  transform: translate(-50%, -50%); /* Center both horizontally and vertically */
+  color: black; /* Set text color to black */
+  font-weight: bold; /* Make text bold */
+  font-size: 18px; /* Increase font size */
 }
