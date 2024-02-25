@@ -19,7 +19,9 @@ export default function Host() {
         <div className="submit-box" style={{ backgroundColor: boxColor }} onClick={handleClick}>
             <span className="span">Submit</span>
         </div>
-        <p> Push submit to allow your computer to host model training for new computers</p>
+        < p style={{ textAlign: 'center', marginTop: '20px', fontWeight: 'bold' , marginLeft:'176px'}}>
+             Push submit to allow your computer to host model training for new computers
+        </p>
     </div>
 
 
