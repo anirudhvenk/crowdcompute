@@ -1,4 +1,5 @@
 import './navbar.css';
+import React from "react";
 import logo from './assets/logo.svg';
 import users from './assets/users.svg'
 import upload from './assets/upload.svg'
