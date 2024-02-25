@@ -5,7 +5,6 @@ import Home from './pages/Home';
 import Host from './pages/Host';
 import Profile from './pages/Profile';
 import Upload from './pages/Upload';
-import GitHubOAuth from './GitHubOAuth';
 
 // const express = require('express');
 // const session = require('express-session');
@@ -33,10 +32,6 @@ function App() {
     case "/Upload":
       component = <Upload />
       console.log(window.location.pathname)
-      break
-    case "/Login":
-      console.log(window.location.pathname)
-      component = <GitHubOAuth />
       break
   }
   return (

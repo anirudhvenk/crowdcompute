@@ -79,3 +79,10 @@
     left: 400px;
     top: 115px;
 }
+
+.button1 {
+    position: absolute;
+    display: flex;
+    left: 400px;
+    top: 115px;
+}
