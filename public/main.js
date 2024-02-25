@@ -32,6 +32,7 @@ onChildAdded(usersRef, (snapshot) => {
     let dockerPullCommand = `docker pull ${userData.docker_username}/${userData.docker_repo}`;
     let dockerRunCommand = `docker run ${userData.docker_username}/${userData.docker_repo}`;
     exec(dockerPullCommand, { cwd: "./" }, (error, stdout, stderr) => {
+      console.log(stdout)
       if (error) {
         console.error(`exec error: ${error}`);
         return;
