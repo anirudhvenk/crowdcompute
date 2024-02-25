@@ -67,7 +67,7 @@ ipcMain.on('upload-file', (event, filePath) => {
 });
 
 ipcMain.on('submit-host', (event) => {
-  // writeData('hosts/1', systemInfo)
+
 });
 
 
