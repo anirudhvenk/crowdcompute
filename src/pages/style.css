@@ -1,0 +1,263 @@
+.profile {
+    background-color: #f2eee3;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .profile .div-2 {
+    background-color: #f2eee3;
+    height: 1024px;
+    overflow: hidden;
+    position: relative;
+    width: 1440px;
+  }
+  
+  .profile .side-nav {
+    background-color: #5065a8;
+    box-shadow: 0px 9.38px 93.85px #00000026;
+    height: 1034px;
+    left: 0;
+    position: absolute;
+    top: -5px;
+    width: 318px;
+  }
+  
+  .profile .logo {
+    height: 197px;
+    left: 57px;
+    position: absolute;
+    top: 30px;
+    width: 204px;
+  }
+  
+  .profile .nav-list {
+    align-items: flex-start;
+    display: inline-flex;
+    flex-direction: column;
+    gap: 15.02px;
+    left: 29px;
+    position: absolute;
+    top: 257px;
+  }
+  
+  .profile .nav-item-instance {
+    border-radius: 3.75px !important;
+    flex: 0 0 auto !important;
+    padding: 0px 7.51px !important;
+    width: 259.95px !important;
+  }
+  
+  .profile .design-component-instance-node {
+    padding: 7.51px !important;
+  }
+  
+  .profile .icon-instance-node {
+    height: 30.03px !important;
+    position: relative !important;
+    width: 30.03px !important;
+  }
+  
+  .profile .nav-item-2 {
+    font-family: "Poppins-Bold", Helvetica !important;
+    font-size: 26px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.26px !important;
+    line-height: 22.5px !important;
+    margin-top: -0.94px !important;
+  }
+  
+  .profile .nav-item-3 {
+    font-family: "Poppins-Bold", Helvetica !important;
+    font-size: 25px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.25px !important;
+    line-height: 22.5px !important;
+    margin-top: -0.94px !important;
+  }
+  
+  .profile .profile-sec {
+    height: 100px;
+    left: 375px;
+    position: absolute;
+    top: 125px;
+    width: 987px;
+  }
+  
+  .profile .overlap-group {
+    height: 100px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 350px;
+  }
+  
+  .profile .rectangle {
+    background-color: #d9d9d9;
+    box-shadow: 9px 4px 4px #00000040;
+    height: 100px;
+    left: 0;
+    opacity: 0.4;
+    position: absolute;
+    top: 0;
+    width: 350px;
+  }
+  
+  .profile .text-wrapper {
+    color: #000000;
+    font-family: "Poppins-Bold", Helvetica;
+    font-size: 32px;
+    font-weight: 700;
+    left: 35px;
+    letter-spacing: 0.32px;
+    line-height: 22.5px;
+    position: absolute;
+    text-align: center;
+    top: 36px;
+    width: 280px;
+  }
+  
+  .profile .overlap {
+    height: 100px;
+    left: 350px;
+    position: absolute;
+    top: 0;
+    width: 635px;
+  }
+  
+  .profile .arrow {
+    height: 23px;
+    left: 0;
+    position: absolute;
+    top: 43px;
+    width: 299px;
+  }
+  
+  .profile .rectangle-2 {
+    background-color: #d9d9d9;
+    border-radius: 20px;
+    box-shadow: 9px 4px 4px #00000040;
+    height: 100px;
+    left: 285px;
+    opacity: 0.4;
+    position: absolute;
+    top: 0;
+    width: 350px;
+  }
+  
+  .profile .overlap-wrapper {
+    height: 100px;
+    left: 375px;
+    position: absolute;
+    top: 710px;
+    width: 987px;
+  }
+  
+  .profile .overlap-2 {
+    height: 100px;
+    position: relative;
+    width: 985px;
+  }
+  
+  .profile .rectangle-3 {
+    background-color: #d9d9d9;
+    border-radius: 20px;
+    box-shadow: 9px 4px 4px #00000040;
+    height: 100px;
+    left: 0;
+    opacity: 0.4;
+    position: absolute;
+    top: 0;
+    width: 350px;
+  }
+  
+  .profile .img {
+    height: 23px;
+    left: 350px;
+    position: absolute;
+    top: 44px;
+    width: 299px;
+  }
+  
+  .profile .rectangle-4 {
+    background-color: #d9d9d9;
+    border-radius: 20px;
+    box-shadow: 9px 4px 4px #00000040;
+    height: 100px;
+    left: 635px;
+    opacity: 0.4;
+    position: absolute;
+    top: 0;
+    width: 350px;
+  }
+  
+  .profile .text-wrapper-2 {
+    color: #000000;
+    font-family: "Poppins-Bold", Helvetica;
+    font-size: 32px;
+    font-weight: 700;
+    left: 35px;
+    letter-spacing: 0.32px;
+    line-height: 22.5px;
+    position: absolute;
+    text-align: center;
+    top: 38px;
+    width: 280px;
+  }
+  
+  .profile .profile-sec-2 {
+    height: 100px;
+    left: 375px;
+    position: absolute;
+    top: 515px;
+    width: 987px;
+  }
+  
+  .profile .overlap-3 {
+    border-radius: 20px;
+    height: 100px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 350px;
+  }
+  
+  .profile .text-wrapper-3 {
+    color: #000000;
+    font-family: "Poppins-Bold", Helvetica;
+    font-size: 32px;
+    font-weight: 700;
+    left: 35px;
+    letter-spacing: 0.32px;
+    line-height: 22.5px;
+    position: absolute;
+    text-align: center;
+    top: 37px;
+    width: 280px;
+  }
+  
+  .profile .profile-sec-3 {
+    height: 113px;
+    left: 375px;
+    position: absolute;
+    top: 320px;
+    width: 987px;
+  }
+  
+  .profile .overlap-4 {
+    height: 100px;
+    left: 350px;
+    position: absolute;
+    top: 13px;
+    width: 635px;
+  }
+  
+  .profile .arrow-2 {
+    height: 23px;
+    left: 0;
+    position: absolute;
+    top: 30px;
+    width: 299px;
+  }
+  
