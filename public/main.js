@@ -28,25 +28,35 @@ global.availableToHost = false;
 // onChildAdded(usersRef, (snapshot) => {
 //   const userData = snapshot.val();
 
-//   if (global.availableToHost) {
-//     let dockerCreateCommand = `docker create ${userData.docker_username}/${userData.docker_repo}`
-//     exec(dockerCreateCommand, { cwd: "./" }, (error, stdout ,stderr) => {
-//       containerID = stdout.replace(/\n/g, '');
-//       let dockerRunCommand = `docker start ${containerID}`
-//       exec(dockerRunCommand, { cwd: "./"}, (error, stdout, stderr) => {
-//         if (error) {
-//           console.error(`exec error: ${error}`)
-//         }
-//         let dockerCopyCommand = `docker cp ${containerID}:/test_model/test.txt ./test.txt`;
-//         exec(dockerCopyCommand, { cwd: "./" }, (error, stdout, stderr) => {
-//           if (error) {
-//             console.error(`exec error: ${error}`)
-//           }
-//         });
-//       });
-//     });
-//   }
-// });
+  if (global.availableToHost) {
+    let dockerPullCommand = `docker pull ${userData.docker_username}/${userData.docker_repo}`
+    exec(dockerPullCommand, { cwd: "./" }, (error, stdout, stderr) => {
+      if (error) {
+        console.error(`exec error: ${error}`)
+      }
+      let dockerCreateCommand = `docker create ${userData.docker_username}/${userData.docker_repo}`
+      console.log(userData)
+      exec(dockerCreateCommand, { cwd: "./" }, (error, stdout ,stderr) => {
+        if (error) {
+          console.error(`exec error: ${error}`)
+        }
+        containerID = stdout.replace(/\n/g, '');
+        let dockerRunCommand = `docker start ${containerID}`
+        exec(dockerRunCommand, { cwd: "./"}, (error, stdout, stderr) => {
+          if (error) {
+            console.error(`exec error: ${error}`)
+          }
+          let dockerCopyCommand = `docker cp ${containerID}:/test_model/test.txt ./test.txt`;
+          exec(dockerCopyCommand, { cwd: "./" }, (error, stdout, stderr) => {
+            if (error) {
+              console.error(`exec error: ${error}`)
+            }
+          });
+        });
+      });
+    });
+  }
+});
 
 // let dockerCreateCommand = `docker create anirudhvenk/runnable_image:1.0`
 // exec(dockerCreateCommand, { cwd: "./" }, (error, stdout ,stderr) => {

@@ -4,14 +4,11 @@ import "./Profile.css";
 export default function Profile() {
   return (
     <div className="profile">
+      <div className="profile-title">Profile</div>
       <div className="div-2">
-        <div className="div-wrapper">
-          Profile
-        </div>
-
-        <div className="overlap-group">
+      <div className="overlap-group">
           <div className="rectangle">
-            Servers Hosted
+            <span className="rectangle-text">Servers Hosted</span>
           </div>
 
           <div className="rectangle-2">
@@ -21,33 +18,27 @@ export default function Profile() {
 
         <div className="overlap">
           <div className="rectangle">
-            Wallet
+            <span className="rectangle-text">Wallet</span>
           </div>
 
-          <div className="rectangle-2">
-            
-          </div>
+          <div className="rectangle-2"></div>
           
         </div>
 
         <div className="overlap-2">
           <div className="rectangle">
-            Sent Projects
+            <span className="rectangle-text">Sent Projects</span>
           </div>
 
-          <div className="rectangle-2">
-            
-          </div>
+          <div className="rectangle-2"></div>
         </div>
 
         <div className="overlap-3">
           <div className="rectangle">
-            Models Trained
+            <span className="rectangle-text">Models Trained</span>
           </div>
 
-          <div className="rectangle-2">
-            
-          </div>
+          <div className="rectangle-2"></div>
           
         </div>
       </div>
