@@ -1,5 +1,5 @@
 import React from "react";
-import "./Host.css";
+import "./host.css";
 const { ipcRenderer } = window.require('electron');
 
 export default function Host() {
